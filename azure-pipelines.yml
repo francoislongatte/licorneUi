@@ -32,5 +32,6 @@ steps:
     ConnectedServiceName: 'licorneWebsite - Service Endpoint'
     WebAppKind: 'webAppLinux'
     WebAppName: 'licorneWebsite'
+    Package: '$(System.DefaultWorkingDirectory)/ui/*.zip'
     RuntimeStack: 'NODE|10.14'
     StartupCommand: 'run start'
