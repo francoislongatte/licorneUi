@@ -29,9 +29,8 @@ steps:
 
 - task: AzureRmWebAppDeployment@4
   inputs:
-    ConnectedServiceName: 'licorneWebsite - Service Endpoint'
+    ConnectedServiceName: 'licornecapital-dp-sandbox(8316f07a-7a47-4408-97d7-f78a7a0868fc)'
     WebAppKind: 'webAppLinux'
     WebAppName: 'licorneWebsite'
-    Package: '$(System.DefaultWorkingDirectory)/ui/*.zip'
     RuntimeStack: 'NODE|10.14'
     StartupCommand: 'run start'
