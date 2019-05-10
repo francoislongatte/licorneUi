@@ -1,0 +1,29 @@
+$family-secondary: 'Manuale', serif;
+
+section{
+  padding: 240px 0;
+}
+
+.container > p{
+  font-family: "Courier New", Courier, monospace;
+}
+
+a.button{
+  margin-top: 60px;
+  background-color: #AC904D;
+  box-shadow: 0 2px 4px 0 rgba(29,116,160,0.25);
+  color: white;
+  padding: 24px;
+}
+
+h2{
+  font-family: $family-secondary;
+  padding-bottom: 20px;
+}
+
+ul {
+
+  li{
+    color:#666666;
+  }
+}

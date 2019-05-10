@@ -1,0 +1,48 @@
+$midnight: #2c3e50;
+$clouds: #ecf0f1;
+
+.tabs {
+  overflow: hidden;
+}
+.tab {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  input{
+    opacity: 0;
+    position: absolute;
+  }
+  &-label {
+    cursor: pointer;
+    /* Icon */
+    &::after {
+      position: absolute;
+      right: 10px;
+      top: -14px;
+      content: "\276F";
+      transform: translateY(50%) rotate(0deg);
+      transition: all .35s;
+      line-height: 27px;
+    }
+  }
+  &-content {
+    max-height: 0;
+    transition: all .35s;
+  }
+  &-close {
+    cursor: pointer;
+  }
+}
+
+// :checked
+input:checked {
+  + .tab-label {
+    &::after {
+      transform: translateY(50%) rotate(90deg);
+      line-height: 27px;
+    }
+  }
+  ~ .tab-content {
+    max-height: 100vh;
+  }
+}

@@ -1,0 +1,32 @@
+$family-secondary: 'Manuale', serif;
+
+section{
+  padding: 0 0 240px;
+}
+
+h1{
+  font-size: 55px;
+  font-family: $family-secondary;
+}
+
+li-collapse {
+  & + li-collapse {
+    display: block;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 2px solid #EEEEEE;
+  }
+  .title{
+    font-size: 24px;
+    font-weight: normal;
+  }
+  .subtitle{
+    color: #666666;
+    padding-top: 20px;
+    font-size: 18px;
+  }
+}
+
+#btnAccount{
+  margin-top: 40px;
+}

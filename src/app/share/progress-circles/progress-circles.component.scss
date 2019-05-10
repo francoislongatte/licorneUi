@@ -1,0 +1,16 @@
+#svg{
+  position: relative;
+  width: 150px;
+  height: 100px;
+
+  .text{
+    position: absolute;
+    right: 0;
+  }
+
+  &.right > g{
+    transform: translate(55px,0);
+  }
+}
+
+

@@ -1,0 +1,11 @@
+<div class="tabs">
+  <div class="tab">
+    <input type="checkbox" [id]="nameId" [checked]="isFirst">
+    <label class="tab-label" [for]="nameId">
+      <ng-content select=".label"></ng-content>
+    </label>
+    <div class="tab-content">
+      <ng-content select=".content"></ng-content>
+    </div>
+  </div>
+</div>

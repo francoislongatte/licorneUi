@@ -1,0 +1,43 @@
+.carousel-cell {
+  width:  50%;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.card-content{
+  padding: 40px;
+}
+
+.card-image {
+  text-align: center;
+  img{
+    min-height: 500px;
+    //width: auto;
+  }
+}
+
+@media screen and (max-width: 768px) { // Mobile
+
+}
+
+@media screen and (min-width: 769px) { // tablet
+
+}
+
+@media screen and (max-width: 1087px) { // touch
+
+}
+
+@media screen and (min-width: 1088px) { // desktop
+
+}
+
+@media screen and (min-width: 1280px) { // widescreen
+
+}
+
+@media screen and (min-width: 1472px) { // fullHd
+  .carousel-cell {
+    width:  25%;
+  }
+}

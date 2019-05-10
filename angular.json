@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "li",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
@@ -28,9 +28,15 @@
               "src/robots.txt"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/@creativebulma/bulma-collapsible/dist/css/bulma-collapsible.min.css",
+              "./node_modules/flickity/dist/flickity.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/@creativebulma/bulma-collapsible/dist/js/bulma-collapsible.min.js",
+              "./node_modules/flickity/dist/flickity.pkgd.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

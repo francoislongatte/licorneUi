@@ -1,0 +1,106 @@
+<div class="container">
+  <nav class="columns is-vertical-center">
+    <div class="column has-text-left">
+      <div class="buttons">
+        <a class="button is-white" (click)="toggleMenu()">
+          <span class="icon">
+          <i class="fa fa-bars"></i>
+        </span>
+          <strong>
+            MENU
+          </strong>
+        </a>
+      </div>
+    </div>
+    <div class="column has-text-centered">
+      <img src="../../../assets/images/400dpiLogoCropped.png" alt="Licorne - logo of company">
+    </div>
+    <div class="column has-text-right">
+      <div class="buttons">
+        <a class="button is-white">
+          <strong>Login</strong>
+        </a>
+        <a class="button is-outlined is-rounded is-primary" id="btnAccount">
+          open account
+        </a>
+        <a class="button is-white">
+          <strong>EU</strong>
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+<div [@fadeOpacity]="stateToString" [@fadeDisplay]="stateToString" class="li-dropdown-menu">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h2 class="title is-4">
+          Our strategy
+        </h2>
+        <ul>
+          <li><a class="subtitle is-5">What they do</a></li>
+          <li><a class="subtitle is-5">What we do</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h2 class="title is-4">
+          Our performance
+        </h2>
+        <ul>
+          <li><a class="subtitle is-5">Individuals</a></li>
+          <li><a class="subtitle is-5">Fund</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h2 class="title is-4">
+          Individuals offer
+        </h2>
+        <ul>
+          <li><a class="subtitle is-5">Our prices</a></li>
+          <li><a class="subtitle is-5">Our portfolios</a></li>
+          <li><a class="subtitle is-5">Your transparency</a></li>
+          <li><a class="subtitle is-5">Open an account</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul class="li-space-between-items">
+          <li><a><h2 class="title is-4">Contacts</h2></a></li>
+          <li><a><h2 class="title is-4">Careers</h2></a></li>
+          <li><a><h2 class="title is-4">Blogs</h2></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <h2 class="title is-4">
+          Wealth manager offer
+        </h2>
+        <ul>
+          <li><a class="subtitle is-5">The situation</a></li>
+          <li><a class="subtitle is-5">Our solutions</a></li>
+          <li><a class="subtitle is-5">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h2 class="title is-4">
+          Institutionnals offer
+        </h2>
+        <ul>
+          <li><a class="subtitle is-5">Our fund</a></li>
+          <li><a class="subtitle is-5">KIID</a></li>
+          <li><a class="subtitle is-5">Subscribe</a></li>
+        </ul>
+      </div>
+      <div class="column is-6">
+        <h2 class="title is-4">
+          Who are we?
+        </h2>
+        <ul>
+          <li><a class="subtitle is-5">Imperative</a></li>
+          <li><a class="subtitle is-5">Our team</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
