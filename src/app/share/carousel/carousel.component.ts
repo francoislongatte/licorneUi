@@ -12,7 +12,7 @@ export class CarouselComponent implements OnInit {
   constructor() { }
 
   option = {
-    wrapAround: true,
+    wrapAround: false,
     autoPlay: false,
     contain: true,
     cellAlign: 'center'

@@ -1,0 +1,75 @@
+
+.container.is-fluid.carousel{
+  &::before{
+    content: '';
+    width: 11%;
+    height: 95%;
+    top:0;
+    left: 0;
+    display: block;
+    position: absolute;
+    background: white;
+    z-index: 1;
+    opacity: 0.9;
+  }
+  &::after{
+    content: '';
+    width: 11%;
+    height: 95%;
+    top: 0;
+    right: 0;
+    display: block;
+    position: absolute;
+    background: white;
+    z-index: 1;
+    opacity: 0.9;
+  }
+}
+
+.main-carousel{
+  /* dots are lines */
+  .flickity-page-dots {
+    position: inherit;
+    padding: 30px 0 0;
+  }
+  .flickity-page-dots .dot {
+    height: 4px;
+    width: 40px;
+    margin: 0 5px;
+    border-radius: 2px;
+    background-color: #CCCCCC;
+    &.is-selected{
+      background-color: #AB8F4D;
+    }
+  }
+  /* smaller, dark, rounded square */
+  .flickity-button {
+    background: #333;
+    position: absolute;
+  }
+  .flickity-button:hover {
+    background: #AB8F4D;
+  }
+  .flickity-prev-next-button {
+    width: 44px;
+    height: 44px;
+    background: #EEEEEE;
+    border-radius: 0;
+    z-index: 1;
+  }
+  /* icon color */
+  .flickity-button-icon {
+    fill: white;
+  }
+  /* position outside */
+  .flickity-prev-next-button.previous {
+    top: 100%;
+    right: 14.7%;
+    left: inherit;
+  }
+  .flickity-prev-next-button.next {
+    top: 100%;
+    right: 11.2%;
+    left: inherit;
+  }
+}

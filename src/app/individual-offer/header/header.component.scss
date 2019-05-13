@@ -1,0 +1,20 @@
+
+.column{
+  height: 400px;
+
+  &.boxTitle {
+    background: #0A97DB;
+    margin-left: 40px;
+    margin-right: -40px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & + .column {
+      overflow: hidden;
+      margin-top: 60px;
+      padding-right: 40px!important;
+    }
+  }
+}
+

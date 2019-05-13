@@ -1,5 +1,5 @@
 .carousel-cell {
-  width:  50%;
+  width:  25%;
   margin: 10px;
   border-radius: 5px;
 }
@@ -9,7 +9,7 @@
 }
 
 .card-image {
-  text-align: center;
+  text-align: left;
   img{
     min-height: 500px;
     //width: auto;
@@ -38,6 +38,6 @@
 
 @media screen and (min-width: 1472px) { // fullHd
   .carousel-cell {
-    width:  25%;
+    width:  33%;
   }
 }

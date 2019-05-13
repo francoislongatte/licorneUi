@@ -13,11 +13,13 @@
       </div>
     </div>
     <div class="column has-text-centered">
-      <img src="../../../assets/images/400dpiLogoCropped.png" alt="Licorne - logo of company">
+      <a [routerLink]="'home'">
+        <img src="../../../assets/images/400dpiLogoCropped.png" alt="Licorne - logo of company">
+      </a>
     </div>
     <div class="column has-text-right">
       <div class="buttons">
-        <a class="button is-white">
+        <a [routerLink]="'strategy'" class="button is-white">
           <strong>Login</strong>
         </a>
         <a class="button is-outlined is-rounded is-primary" id="btnAccount">
@@ -35,7 +37,7 @@
     <div class="columns">
       <div class="column">
         <h2 class="title is-4">
-          Our strategy
+          <a [routerLink]="['/strategy']">Our strategy</a>
         </h2>
         <ul>
           <li><a class="subtitle is-5">What they do</a></li>
@@ -44,7 +46,7 @@
       </div>
       <div class="column">
         <h2 class="title is-4">
-          Our performance
+          <a [routerLink]="['/performance']">Our performance</a>
         </h2>
         <ul>
           <li><a class="subtitle is-5">Individuals</a></li>
@@ -53,7 +55,7 @@
       </div>
       <div class="column">
         <h2 class="title is-4">
-          Individuals offer
+          <a [routerLink]="['/individual-offer']">Individuals offer</a>
         </h2>
         <ul>
           <li><a class="subtitle is-5">Our prices</a></li>
@@ -73,7 +75,7 @@
     <div class="columns">
       <div class="column">
         <h2 class="title is-4">
-          Wealth manager offer
+          <a [routerLink]="['/wealth-manager-offer']">Wealth manager offer</a>
         </h2>
         <ul>
           <li><a class="subtitle is-5">The situation</a></li>
@@ -83,7 +85,7 @@
       </div>
       <div class="column">
         <h2 class="title is-4">
-          Institutionnals offer
+          <a [routerLink]="['/institutionnals-offer']">Institutionnals offer</a>
         </h2>
         <ul>
           <li><a class="subtitle is-5">Our fund</a></li>

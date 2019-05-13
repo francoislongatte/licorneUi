@@ -1,0 +1,28 @@
+
+.column{
+  height: 400px;
+  &:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+      font-size: 4rem;
+      width: 50%;
+    }
+  }
+  &.boxTitle {
+    background: #DBA60A;
+    margin-left: 40px;
+    margin-right: -40px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & + .column {
+      overflow: hidden;
+      margin-top: 60px;
+      padding-right: 40px!important;
+    }
+  }
+}
+

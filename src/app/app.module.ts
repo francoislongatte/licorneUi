@@ -11,10 +11,17 @@ import {WhyUsComponent} from './homepage/why-us/why-us.component';
 import {AdvantageComponent} from './homepage/advantage/advantage.component';
 import {HeaderComponent} from './homepage/header/header.component';
 import {LatestNewsComponent} from './homepage/latest-news/latest-news.component';
+import {LoadingScreenInterceptor} from './loading.interceptor';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomepageComponent,
+    WhyUsComponent,
+    AdvantageComponent,
+    HeaderComponent,
+    LatestNewsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
@@ -23,7 +30,13 @@ import {LatestNewsComponent} from './homepage/latest-news/latest-news.component'
     ShareModule,
     CoreModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingScreenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

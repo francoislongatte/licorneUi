@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {animate, group, query, stagger, state, style, transition, trigger} from '@angular/animations';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -23,7 +24,12 @@ export class NavigationComponent implements OnInit {
 
   menuState = false;
 
-  constructor() {
+  constructor(private route: Router) {
+    route.events.subscribe(e => {
+      if (e instanceof NavigationEnd) {
+        this.menuState = false;
+      }
+    });
   }
 
   ngOnInit() {
