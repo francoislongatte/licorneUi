@@ -30,7 +30,11 @@ const routes: Routes = [
   },
   {
     path: 'wealth-manager-offer',
-    loadChildren: 'src/app/wealth-manager-offer/wealth-manager-offer.module#WealthManagerOfferModule'
+    loadChildren: './wealth-manager-offer/wealth-manager-offer.module#WealthManagerOfferModule'
+  },
+  {
+    path: 'Who-are-we',
+    loadChildren: './who-are-we/who-are-we.module#WhoAreWeModule'
   }
 ];
 

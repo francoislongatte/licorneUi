@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit, ViewEncapsulation} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnDestroy, Renderer2, ViewEncapsulation} from '@angular/core';
 import * as Flickity from 'flickity/js/index.js';
 
 @Component({
@@ -8,8 +8,10 @@ import * as Flickity from 'flickity/js/index.js';
   encapsulation: ViewEncapsulation.None
 })
 
-export class CarouselComponent implements OnInit {
-  constructor() { }
+export class CarouselComponent implements AfterViewInit, OnDestroy {
+  constructor(private renderer: Renderer2) { }
+
+  onResize: any;
 
   option = {
     wrapAround: false,
@@ -27,18 +29,6 @@ export class CarouselComponent implements OnInit {
   ];
 
   flkty: Flickity = {};
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    if (this.flkty !== {}) {
-      (this.flkty as any).resize();
-    }
-  }
-
-  ngOnInit() {
-    setInterval(() => {
-      this.flkty = new Flickity( '.main-carousel', this.option);
-    });
-  }
 
   previous() {
     this.flkty.previous();
@@ -46,6 +36,20 @@ export class CarouselComponent implements OnInit {
 
   next() {
     this.flkty.next();
+  }
+
+  ngOnDestroy(): void {
+    this.onResize();
+    this.flkty.destroy();
+  }
+
+  ngAfterViewInit(): void {
+    this.onResize = this.renderer.listen('window', 'resize', event => {
+      if (this.flkty !== {}) {
+        (this.flkty as any).resize();
+      }
+    });
+    this.flkty = new Flickity( '.main-carousel', this.option);
   }
 
 }

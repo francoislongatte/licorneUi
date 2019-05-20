@@ -12,7 +12,11 @@ import {AdvantageComponent} from './homepage/advantage/advantage.component';
 import {HeaderComponent} from './homepage/header/header.component';
 import {LatestNewsComponent} from './homepage/latest-news/latest-news.component';
 import {LoadingScreenInterceptor} from './loading.interceptor';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HttpLink, HttpLinkModule} from 'apollo-angular-link-http';
+import {APOLLO_OPTIONS, ApolloModule} from 'apollo-angular';
+import {InMemoryCache} from 'apollo-cache-inmemory';
+import {MarkdownModule} from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -28,9 +32,25 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
     BrowserAnimationsModule,
     AppRoutingModule,
     ShareModule,
-    CoreModule
+    CoreModule,
+    HttpClientModule,
+    ApolloModule,
+    HttpLinkModule,
+    MarkdownModule.forRoot()
   ],
   providers: [
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: (httpLink: HttpLink) => {
+        return {
+          cache: new InMemoryCache(),
+          link: httpLink.create({
+            uri: 'http://localhost:1337/graphql'
+          })
+        };
+      },
+      deps: [HttpLink]
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingScreenInterceptor,

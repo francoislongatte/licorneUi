@@ -1,7 +1,10 @@
 $family-secondary: 'Manuale', serif;
 
-.container > p{
-  font-family: "Courier New", Courier, monospace;
+.container{
+  padding-top: 120px;
+  & > p{
+    font-family: "Courier New", Courier, monospace;
+  }
 }
 
 a.button{

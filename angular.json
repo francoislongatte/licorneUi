@@ -36,7 +36,8 @@
             ],
             "scripts": [
               "./node_modules/@creativebulma/bulma-collapsible/dist/js/bulma-collapsible.min.js",
-              "./node_modules/flickity/dist/flickity.pkgd.min.js"
+              "./node_modules/flickity/dist/flickity.pkgd.min.js",
+              "./node_modules/marked/marked.min.js"
             ],
             "es5BrowserSupport": true
           },

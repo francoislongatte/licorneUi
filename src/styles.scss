@@ -7,6 +7,7 @@ $family-primary: 'Roboto', sans-serif;
 $family-secondary: 'Manuale', serif;
 
 $primary: #AC904D;
+$box-padding: 2.5rem;
 
 @import '~bulma-scss/utilities/all';
 
@@ -17,6 +18,7 @@ $primary: #AC904D;
 @import '~bulma-scss/elements/container';
 @import '~bulma-scss/elements/title';
 @import '~bulma-scss/elements/button';
+@import '~bulma-scss/elements/box';
 
 @import '~bulma-scss/layout/section';
 @import '~bulma-scss/layout/hero';
@@ -25,4 +27,4 @@ $primary: #AC904D;
 
 @import './assets/scss/utils';
 @import './assets/scss/carousel';
-
+@import './assets/scss/markdown';

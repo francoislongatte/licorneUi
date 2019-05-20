@@ -3,7 +3,10 @@ $clouds: #ecf0f1;
 
 .tabs {
   overflow: hidden;
+  border-bottom: 2px solid #EEEEEE;
+  margin-bottom: 20px;
 }
+
 .tab {
   width: 100%;
   overflow: hidden;
@@ -14,7 +17,6 @@ $clouds: #ecf0f1;
   }
   &-label {
     cursor: pointer;
-    /* Icon */
     &::after {
       position: absolute;
       right: 10px;

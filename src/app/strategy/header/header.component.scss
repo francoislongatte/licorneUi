@@ -1,20 +1,31 @@
-
-.column{
-  height: 400px;
-
-  &.boxTitle {
+#strategyHeader {
+  .boxTitle {
     background: #0ADBBA;
-    margin-left: 40px;
     margin-right: -40px;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    & + .column {
+    height: 400px;
+    & + .li-column {
       overflow: hidden;
       margin-top: 60px;
-      padding-right: 40px!important;
+      height: 400px;
+    }
+  }
+
+  .boxImage {
+    margin-top: 50px;
+    width: calc( 58.333333% + 40px);
+    max-height: 400px;
+    overflow: hidden;
+  }
+
+  .columns + .columns {
+    padding-top: 80px;
+    p {
+      padding-bottom: 40px;
+      font-size: 1.5rem;
     }
   }
 }
-

@@ -4,6 +4,7 @@ import { ProgressCirclesComponent } from './progress-circles/progress-circles.co
 import { CollapseComponent } from './collapse/collapse.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
+import {QueryGQL} from './services/query.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,11 @@ import { LoadingScreenComponent } from './loading-screen/loading-screen.componen
   ],
   imports: [
     CommonModule
-  ], exports: [
+  ],
+  providers: [
+    QueryGQL
+  ],
+  exports: [
     ProgressCirclesComponent,
     CollapseComponent,
     CarouselComponent

@@ -3,10 +3,10 @@
   .column img{
     max-height: 65px;
   }
-  .column:first-child .buttons{
+  nav .column:first-child .buttons{
     justify-content: flex-start;
   }
-  .column:last-child .buttons{
+  nav .column:last-child .buttons{
     justify-content: flex-end;
   }
 }
@@ -14,7 +14,7 @@
 .li-dropdown-menu{
   background-color: white;
   z-index: 9999;
-  top:128px;
+  top:116px;
   padding: 96px;
   width: 100%;
   position: absolute;

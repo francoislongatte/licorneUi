@@ -1,47 +1,51 @@
-<div class="container">
-  <nav class="columns is-vertical-center">
-    <div class="column has-text-left">
-      <div class="buttons">
-        <a class="button is-white" (click)="toggleMenu()">
+<div class="container is-fluid is-marginless">
+  <div class="columns">
+    <div class="column is-8 is-offset-2">
+      <nav class="columns is-vertical-center">
+        <div class="column has-text-left">
+          <div class="buttons">
+            <a class="button is-white" (click)="toggleMenu()">
           <span class="icon">
           <i class="fa fa-bars"></i>
         </span>
-          <strong>
-            MENU
-          </strong>
-        </a>
-      </div>
+              <strong>
+                MENU
+              </strong>
+            </a>
+          </div>
+        </div>
+        <div class="column has-text-centered">
+          <a [routerLink]="'home'">
+            <img src="../../../assets/images/400dpiLogoCropped.png" alt="Licorne - logo of company">
+          </a>
+        </div>
+        <div class="column has-text-right">
+          <div class="buttons">
+            <a [routerLink]="'strategy'" class="button is-white">
+              <strong>Login</strong>
+            </a>
+            <a class="button is-outlined is-rounded is-primary" id="btnAccount">
+              open account
+            </a>
+            <a class="button is-white">
+              <strong>EU</strong>
+            </a>
+          </div>
+        </div>
+      </nav>
     </div>
-    <div class="column has-text-centered">
-      <a [routerLink]="'home'">
-        <img src="../../../assets/images/400dpiLogoCropped.png" alt="Licorne - logo of company">
-      </a>
-    </div>
-    <div class="column has-text-right">
-      <div class="buttons">
-        <a [routerLink]="'strategy'" class="button is-white">
-          <strong>Login</strong>
-        </a>
-        <a class="button is-outlined is-rounded is-primary" id="btnAccount">
-          open account
-        </a>
-        <a class="button is-white">
-          <strong>EU</strong>
-        </a>
-      </div>
-    </div>
-  </nav>
+  </div>
 </div>
 <div [@fadeOpacity]="stateToString" [@fadeDisplay]="stateToString" class="li-dropdown-menu">
   <div class="container">
     <div class="columns">
       <div class="column">
         <h2 class="title is-4">
-          <a [routerLink]="['/strategy']">Our strategy</a>
+          <a (click)="navigateAnchor('/strategy')">Our strategy</a>
         </h2>
         <ul>
-          <li><a class="subtitle is-5">What they do</a></li>
-          <li><a class="subtitle is-5">What we do</a></li>
+          <li><a class="subtitle is-5" (click)="navigateAnchor('/strategy#whattheydo')">What they do</a></li>
+          <li><a class="subtitle is-5" (click)="navigateAnchor('/strategy#whatwedo')">What we do</a></li>
         </ul>
       </div>
       <div class="column">
@@ -75,12 +79,12 @@
     <div class="columns">
       <div class="column">
         <h2 class="title is-4">
-          <a [routerLink]="['/wealth-manager-offer']">Wealth manager offer</a>
+          <a (click)="navigateAnchor('/wealth-manager-offer')">Wealth manager offer</a>
         </h2>
         <ul>
-          <li><a class="subtitle is-5">The situation</a></li>
-          <li><a class="subtitle is-5">Our solutions</a></li>
-          <li><a class="subtitle is-5">Contact us</a></li>
+          <li><a (click)="navigateAnchor('/wealth-manager-offer#situation')" class="subtitle is-5">The situation</a></li>
+          <li><a (click)="navigateAnchor('/wealth-manager-offer#solutions')" class="subtitle is-5">Our solutions</a></li>
+          <li><a (click)="navigateAnchor('/wealth-manager-offer#contact')" class="subtitle is-5">Contact us</a></li>
         </ul>
       </div>
       <div class="column">
@@ -95,7 +99,7 @@
       </div>
       <div class="column is-6">
         <h2 class="title is-4">
-          Who are we?
+          <a [routerLink]="['/Who-are-we']">Who are we?</a>
         </h2>
         <ul>
           <li><a class="subtitle is-5">Imperative</a></li>

@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {animate, group, query, stagger, state, style, transition, trigger} from '@angular/animations';
-import {NavigationEnd, Router} from '@angular/router';
+import {Component, ElementRef, HostListener, OnDestroy, OnInit} from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
@@ -20,12 +21,23 @@ import {NavigationEnd, Router} from '@angular/router';
     ])
   ]
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit, OnDestroy {
+  private routeSubscribe: Subscription;
+
+  @HostListener('document:click', ['$event'])
+  clickout(event) {
+    if (!this.eRef.nativeElement.contains(event.target)) {
+      this.menuState = false;
+    }
+  }
 
   menuState = false;
 
-  constructor(private route: Router) {
-    route.events.subscribe(e => {
+  constructor(
+    private route: Router,
+    private activatedRoute: ActivatedRoute,
+    private eRef: ElementRef) {
+    this.routeSubscribe = route.events.subscribe(e => {
       if (e instanceof NavigationEnd) {
         this.menuState = false;
       }
@@ -33,6 +45,7 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   get stateToString(): string {
@@ -41,6 +54,23 @@ export class NavigationComponent implements OnInit {
 
   toggleMenu() {
     this.menuState = !this.menuState;
+  }
+
+  navigateAnchor(url: string) {
+    const splitNavigate = url.split('#');
+    const splitUrl = this.route.url.split('#');
+
+    this.route.navigate( [splitNavigate[0]], {fragment: splitNavigate[1]});
+
+    if (splitNavigate[0] === splitUrl[0]) {
+      if (splitNavigate[1]) {
+        document.querySelector('#' + splitNavigate[1]).scrollIntoView({behavior: 'smooth' });
+      }
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.routeSubscribe.unsubscribe();
   }
 
 }

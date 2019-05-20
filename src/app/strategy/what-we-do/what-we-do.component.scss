@@ -1,0 +1,18 @@
+#whatwedo {
+  margin-top: 160px;
+
+  .image{
+    img{
+      Object-fit: cover;
+    }
+  }
+
+  h1{
+    padding-bottom: 40px;
+  }
+
+  .button{
+    margin-top: 40px;
+    border: 2px solid #AC904D;	border-radius: 17px;	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.15);
+  }
+}
