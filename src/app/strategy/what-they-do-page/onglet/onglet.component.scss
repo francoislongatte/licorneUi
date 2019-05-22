@@ -1,0 +1,22 @@
+.columns{
+
+  & + .columns {
+    padding-top: 60px;
+  }
+
+  & > .column.title {
+    text-align: center;
+    a {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      padding-bottom: 20px;
+      color: black;
+      width: 100%;
+      display: inline-block;
+      &.is-active {
+        border-bottom: 2px solid #AC904D
+      }
+    }
+  }
+}

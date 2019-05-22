@@ -1,4 +1,5 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {StrategyContent} from '../../share/services/query.service';
 
 @Component({
   selector: 'li-what-we-do',
@@ -6,7 +7,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   styleUrls: ['./what-we-do.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class WhatWeDoComponent implements OnInit {
+export class WhatWeDoComponent{
 
   pieChart = {
     colorScheme: {
@@ -51,12 +52,28 @@ export class WhatWeDoComponent implements OnInit {
     yAxisLabel: 'test2'
   };
 
+  private _strategyWhatTheyDoContent: StrategyContent[];
+
+  @Input()
+  set strategyWhatTheyDoContent(value: StrategyContent[]) {
+    if (value) {
+      this._strategyWhatTheyDoContent = value;
+    }
+  }
+
   constructor() {
   }
 
-  ngOnInit() {
+  get text() {
+    if (this._strategyWhatTheyDoContent && this._strategyWhatTheyDoContent.length > 0) {
+      return this._strategyWhatTheyDoContent[0].Text_en;
+    }
+  }
 
-
+  get title() {
+    if (this._strategyWhatTheyDoContent && this._strategyWhatTheyDoContent.length > 0) {
+      return this._strategyWhatTheyDoContent[0].Title_en;
+    }
   }
 
 }

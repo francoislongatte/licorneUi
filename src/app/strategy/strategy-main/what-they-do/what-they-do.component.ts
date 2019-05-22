@@ -7,11 +7,11 @@ import {StrategyContent} from '../../share/services/query.service';
   styleUrls: ['./what-they-do.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class WhatTheyDoComponent{
-  private _strategyWhatTheyDoContent: StrategyContent;
+export class WhatTheyDoComponent {
+  private _strategyWhatTheyDoContent: StrategyContent[];
 
   @Input()
-  set strategyWhatTheyDoContent(value: StrategyContent) {
+  set strategyWhatTheyDoContent(value: StrategyContent[]) {
     if (value) {
       this._strategyWhatTheyDoContent = value;
     }
@@ -21,14 +21,14 @@ export class WhatTheyDoComponent{
   }
 
   get text() {
-    if (this._strategyWhatTheyDoContent && this._strategyWhatTheyDoContent.Text_en) {
-      return this._strategyWhatTheyDoContent.Text_en;
+    if (this._strategyWhatTheyDoContent && this._strategyWhatTheyDoContent.length > 0) {
+      return this._strategyWhatTheyDoContent[0].Text_en;
     }
   }
 
   get title() {
-    if (this._strategyWhatTheyDoContent && this._strategyWhatTheyDoContent.Title_en) {
-      return this._strategyWhatTheyDoContent.Title_en;
+    if (this._strategyWhatTheyDoContent && this._strategyWhatTheyDoContent.length > 0) {
+      return this._strategyWhatTheyDoContent[0].Title_en;
     }
   }
 
