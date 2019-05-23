@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {StrategyContent} from '../../services/query.service';
+import {StrategyContent} from '../../services/query.interface';
 
 @Component({
   selector: 'li-header',
@@ -28,6 +28,7 @@ export class HeaderComponent {
 
   get title() {
     if (this._strategyHeaderContent && this._strategyHeaderContent.length > 0) {
+
       return this._strategyHeaderContent[0].Title_en;
     }
   }

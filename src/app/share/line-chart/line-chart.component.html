@@ -1,0 +1,18 @@
+<ng-container *ngIf="options.chart === 'line-chart'">
+  <ngx-charts-line-chart
+    [scheme]="options?.content?.colorScheme"
+    [results]="options?.content?.data"
+    [gradient]="options?.content?.gradient"
+    [xAxis]="options?.content?.showXAxis"
+    [yAxis]="options?.content?.showYAxis"
+    [legend]="options?.content?.showLegend"
+    [showXAxisLabel]="options?.content?.showXAxisLabel"
+    [showYAxisLabel]="options?.content?.showYAxisLabel"
+    [xAxisLabel]="options?.content?.xAxisLabel"
+    [yAxisLabel]="options?.content?.yAxisLabel"
+    [timeline]="options?.content?.timeline">
+  </ngx-charts-line-chart>
+</ng-container>
+
+
+

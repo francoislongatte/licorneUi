@@ -13,10 +13,7 @@ import {QueryGQL} from './share/services/query.service';
 import { WhatTheyDoPageComponent } from './what-they-do-page/what-they-do-page.component';
 import { TitleComponent } from './what-they-do-page/title/title.component';
 import { OngletComponent } from './what-they-do-page/onglet/onglet.component';
-import { Template1Component } from './what-they-do-page/onglet/template1/template1.component';
-import { Template2Component } from './what-they-do-page/onglet/template2/template2.component';
-import { Template3Component } from './what-they-do-page/onglet/template3/template3.component';
-import { TemplateDefaultComponent } from './what-they-do-page/onglet/template-default/template-default.component';
+import { TemplateComponent } from './what-they-do-page/onglet/template/template.component';
 
 @NgModule({
   declarations: [
@@ -28,16 +25,12 @@ import { TemplateDefaultComponent } from './what-they-do-page/onglet/template-de
     WhatTheyDoPageComponent,
     TitleComponent,
     OngletComponent,
-    Template1Component,
-    Template2Component,
-    Template3Component,
-    TemplateDefaultComponent
+    TemplateComponent,
   ],
   imports: [
     CommonModule,
     StrategyRoutingModule,
     ShareModule,
-    NgxChartsModule,
     MarkdownModule.forChild()
   ],
   providers: [

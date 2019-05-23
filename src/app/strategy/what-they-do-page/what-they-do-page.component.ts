@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ContentConfigsContent, QueryGQL, StrategyContent} from '../share/services/query.service';
+import {ContentConfigsContent, StrategyContent} from '../share/services/query.interface';
+import {QueryGQL} from '../share/services/query.service';
+
 
 @Component({
   selector: 'li-what-they-do-page',
@@ -28,6 +30,7 @@ export class WhatTheyDoPageComponent implements OnInit {
           .find(result => result.id_text === 'whatTheyDo' && result.type === 'article');
         const onglet = results
           .find(result => result.id_text === 'onglet' && result.type === 'onglet');
+
         this.contents.header = header ? header.contents : null;
         this.contents.title = title ? title.contents : null;
         this.contents.onglet = onglet ? onglet.contents : null;

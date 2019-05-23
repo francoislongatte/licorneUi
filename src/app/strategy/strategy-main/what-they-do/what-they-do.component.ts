@@ -1,5 +1,5 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {StrategyContent} from '../../share/services/query.service';
+import {StrategyContent} from '../../share/services/query.interface';
 
 @Component({
   selector: 'li-what-they-do',

@@ -1,14 +1,10 @@
 <div class="container">
-  <div class="columns">
+  <div class="columns is-gapless">
     <div class="column title" *ngFor="let title of titleOnglets;let index = index">
       <a class="has-text-centered" (click)="changeOnglet(index)" [ngClass]="{'is-active': index == ongletActive}">
         {{title.Title_en}}
       </a>
     </div>
   </div>
-  <li-template1 *ngIf="ongletActive == 0" [articles]="articles"></li-template1>
-  <li-template2 *ngIf="ongletActive == 1" [articles]="articles"></li-template2>
-  <li-template3 *ngIf="ongletActive == 2" [articles]="articles"></li-template3>
-  <li-template-default *ngIf="ongletActive != 0 && ongletActive != 1 && ongletActive != 2"
-                       [articles]="articles"></li-template-default>
+  <li-template [articlesData]="articles"></li-template>
 </div>

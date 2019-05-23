@@ -9,7 +9,7 @@ import {HomepageComponent} from './homepage/homepage.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {WhyUsComponent} from './homepage/why-us/why-us.component';
 import {AdvantageComponent} from './homepage/advantage/advantage.component';
-import {HeaderComponent} from './homepage/header/header.component';
+import {HeaderPageComponent} from './homepage/header-page/header-page.component';
 import {LatestNewsComponent} from './homepage/latest-news/latest-news.component';
 import {LoadingScreenInterceptor} from './loading.interceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
@@ -24,7 +24,7 @@ import {MarkdownModule} from 'ngx-markdown';
     HomepageComponent,
     WhyUsComponent,
     AdvantageComponent,
-    HeaderComponent,
+    HeaderPageComponent,
     LatestNewsComponent
   ],
   imports: [

@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {StrategyContent} from '../../share/services/query.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {StrategyContent} from '../../share/services/query.interface';
 
 @Component({
   selector: 'li-onglet',
@@ -14,17 +13,18 @@ export class OngletComponent {
 
   @Input()
   set strategyWhatTheyDoContent(value: StrategyContent[]) {
-    console.log('onglet', value);
     if (value) {
       this._strategyWhatTheyDoContent = value;
+      this._strategyWhatTheyDoContent.sort((itemA, itemB) => itemA.order - itemB.order);
     }
   }
 
-  constructor() {}
+  constructor() {
+  }
 
   get articles(): StrategyContent[] {
     if (this._strategyWhatTheyDoContent && this._strategyWhatTheyDoContent.length > 0) {
-      return this._strategyWhatTheyDoContent.filter( content => content.order === this.ongletActive + 1);
+      return this._strategyWhatTheyDoContent.filter(content => content.onglet === this.ongletActive + 1 && content.order !== 0);
     }
   }
 

@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs';
-import {ContentConfigsContent, QueryGQL, StrategyContent} from '../share/services/query.service';
 import {ActivatedRoute} from '@angular/router';
+import {ContentConfigsContent, StrategyContent} from '../share/services/query.interface';
+import {QueryGQL} from '../share/services/query.service';
 
 @Component({
   selector: 'li-strategy-main',

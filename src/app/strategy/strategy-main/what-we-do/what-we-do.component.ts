@@ -1,5 +1,5 @@
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {StrategyContent} from '../../share/services/query.service';
+import {Component, Input, ViewEncapsulation} from '@angular/core';
+import {StrategyContent} from '../../share/services/query.interface';
 
 @Component({
   selector: 'li-what-we-do',
@@ -7,7 +7,7 @@ import {StrategyContent} from '../../share/services/query.service';
   styleUrls: ['./what-we-do.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class WhatWeDoComponent{
+export class WhatWeDoComponent {
 
   pieChart = {
     colorScheme: {
