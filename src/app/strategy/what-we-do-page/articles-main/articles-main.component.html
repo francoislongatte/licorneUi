@@ -1,0 +1,28 @@
+<li-header-page [strategyHeaderContent]="contents?.header"></li-header-page>
+<li-title-page [strategyWhatTheyDoContent]="contents?.title"></li-title-page>
+
+<div id="articles" *ngIf="contents?.articles" class="container is-fluid is-marginless">
+  <div class="columns is-multiline" li-traditional-portfolio-managers
+       *ngIf="getArticle('traditional-portfolio-managers')"
+       [article]="getArticle('traditional-portfolio-managers')"></div>
+  <div class="columns is-multiline" li-heart-of-strategy
+       *ngIf="getArticle('heart-of-strategy')"
+       [article]="getArticle('heart-of-strategy')"></div>
+  <div class="columns is-multiline" li-investment-universe
+       *ngIf="getArticle('investment-universe')"
+       [article]="getArticle('investment-universe')"></div>
+  <div class="columns is-multiline" li-management-tactics
+       *ngIf="getArticle('management-tactics')"
+       [article]="getArticle('management-tactics')"></div>
+  <div class="columns is-multiline"
+       *ngIf="getArticle('instrument-of-strategy') || getArticle('money-risk-management')">
+    <div class="column is-4 is-offset-2" li-instrument-of-strategy
+         *ngIf="getArticle('instrument-of-strategy')"
+         [article]="getArticle('instrument-of-strategy')"></div>
+    <div class="column is-4" li-money-risk-management
+         *ngIf="getArticle('money-risk-management')"
+         [article]="getArticle('money-risk-management')"></div>
+  </div>
+</div>
+
+

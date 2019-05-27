@@ -17,6 +17,7 @@ import {HttpLink, HttpLinkModule} from 'apollo-angular-link-http';
 import {APOLLO_OPTIONS, ApolloModule} from 'apollo-angular';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 import {MarkdownModule} from 'ngx-markdown';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import {MarkdownModule} from 'ngx-markdown';
         return {
           cache: new InMemoryCache(),
           link: httpLink.create({
-            uri: 'http://localhost:1337/graphql'
+            uri: environment.url
           })
         };
       },

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'localhost:4200',
+  url: 'http://localhost:1337/graphql',
   jetonSas: '?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-05-08T20:48:38Z&st=2019-05-08T12:48:38Z&spr=https&sig=K4KUPdQVNbjpM3X7GS3wHZSUqhKYtyNXpIPE%2BSSes6I%3D'
 };
 

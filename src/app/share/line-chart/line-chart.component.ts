@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Schema} from '../../strategy/share/services/query.interface';
 
 @Component({
@@ -6,19 +6,11 @@ import {Schema} from '../../strategy/share/services/query.interface';
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.scss']
 })
-export class LineChartComponent implements OnInit {
+export class LineChartComponent {
 
-  @Input()
-  set data(data: Schema) {
-    this.options = data;
-  }
-
-  options: Schema;
+  @Input() options: Schema;
 
   constructor() {
-  }
-
-  ngOnInit() {
   }
 
 }

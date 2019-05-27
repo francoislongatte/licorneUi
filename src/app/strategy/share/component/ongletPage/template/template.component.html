@@ -1,0 +1,54 @@
+<div class="columns is-multiline">
+    <div class="column is-8 is-offset-2 center has-text-centered" *ngIf="articleCenter?.length > 0">
+      <ng-container *ngFor="let articleCenter of articleCenter;let index = index;">
+        <h2 class="title is-4">{{articleCenter.Title_en}}</h2>
+        <div class="is-size-4" markdown>{{articleCenter.Text_en}}</div>
+      </ng-container>
+    </div>
+    <div class="column is-6">
+      <div class="columns is-multiline">
+        <ng-container *ngFor="let article of articles;let index = index;">
+          <ng-container *ngIf="index + 1 <= articlesLengthForTwoColumn">
+            <div  class="column is-12 article left">
+              <ng-container *ngIf="!article?.image && !article?.Schema_en?.chart">
+                <h2 class="title is-4">{{article.Title_en}}</h2>
+                <div class="is-size-4" markdown>{{article.Text_en}}</div>
+              </ng-container>
+              <ng-container *ngIf="article?.image">
+                <img class="image " [src]="article.image.url" />
+              </ng-container>
+              <ng-container *ngIf="article?.Schema_en?.chart">
+                <div class="box" [style.border-color]="article?.Schema_en?.colorBox">
+                  <li-line-chart [options]="article?.Schema_en"></li-line-chart>
+                  <div class="background" [style.background-color]="article?.Schema_en?.color"></div>
+                </div>
+              </ng-container>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+    <div class="column is-6">
+      <div class="columns is-multiline">
+        <ng-container *ngFor="let article of articles;let index = index;">
+          <ng-container *ngIf="index + 1 > articlesLengthForTwoColumn">
+            <div class="column is-12 article right">
+              <ng-container *ngIf="!article?.image && !article?.Schema_en?.chart">
+                <h2 class="title is-4">{{article.Title_en}}</h2>
+                <div class="is-size-4" markdown>{{article.Text_en}}</div>
+              </ng-container>
+              <ng-container *ngIf="article?.image">
+                <img class="image" [src]="article.image.url" />
+              </ng-container>
+              <ng-container *ngIf="article?.Schema_en?.chart">
+                <div class="box" [style.border-color]="article.Schema_en.colorBox">
+                  <li-line-chart [options]="article?.Schema_en"></li-line-chart>
+                  <div class="background" [style.background-color]="article?.Schema_en?.color"></div>
+                </div>
+              </ng-container>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+</div>

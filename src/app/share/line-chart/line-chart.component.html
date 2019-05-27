@@ -13,6 +13,20 @@
     [timeline]="options?.content?.timeline">
   </ngx-charts-line-chart>
 </ng-container>
+<ng-container *ngIf="options.chart === 'vertical-chart'">
+  <ngx-charts-bar-vertical
+    [scheme]="options?.content?.colorScheme"
+    [results]="options?.content?.data"
+    [gradient]="options?.content?.gradient"
+    [xAxis]="options?.content?.showXAxis"
+    [yAxis]="options?.content?.showYAxis"
+    [legend]="options?.content?.showLegend"
+    [showXAxisLabel]="options?.content?.showXAxisLabel"
+    [showYAxisLabel]="options?.content?.showYAxisLabel"
+    [xAxisLabel]="options?.content?.xAxisLabel"
+    [yAxisLabel]="options?.content?.yAxisLabel">
+  </ngx-charts-bar-vertical>
+</ng-container>
 
 
 

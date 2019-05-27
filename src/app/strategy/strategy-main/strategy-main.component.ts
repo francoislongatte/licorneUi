@@ -30,11 +30,11 @@ export class StrategyMainComponent implements OnInit, AfterViewInit, OnDestroy {
       .subscribe((results: ContentConfigsContent[]) => {
         console.log(results);
         const header = results
-          .find(result => result.id_text === 'header' && result.type === 'article');
+          .find(result => result.id_text === 'header');
         const whatTheyDo = results
-          .find(result => result.id_text === 'whatTheyDo' && result.type === 'article');
+          .find(result => result.id_text === 'whatTheyDo');
         const whatWeDo = results
-          .find(result => result.id_text === 'whatWeDo' && result.type === 'article');
+          .find(result => result.id_text === 'whatWeDo');
         this.contents.header = header ? header.contents : null;
         this.contents.whatTheyDo = whatTheyDo ? whatTheyDo.contents : null;
         this.contents.whatWeDo = whatWeDo ? whatWeDo.contents : null;

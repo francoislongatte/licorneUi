@@ -21,16 +21,14 @@ export class WhatTheyDoPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
     this.queryGraphql.$whatTheyDoPage
       .subscribe((results: ContentConfigsContent[]) => {
         const header = results
-          .find(result => result.id_text === 'header' && result.type === 'article');
+          .find(result => result.id_text === 'header');
         const title = results
-          .find(result => result.id_text === 'whatTheyDo' && result.type === 'article');
+          .find(result => result.id_text === 'whatTheyDo');
         const onglet = results
-          .find(result => result.id_text === 'onglet' && result.type === 'onglet');
-
+          .find(result => result.id_text === 'onglet');
         this.contents.header = header ? header.contents : null;
         this.contents.title = title ? title.contents : null;
         this.contents.onglet = onglet ? onglet.contents : null;
