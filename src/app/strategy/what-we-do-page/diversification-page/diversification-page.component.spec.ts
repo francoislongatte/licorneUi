@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DiversificationComponent } from './diversification.component';
+import { DiversificationPageComponent } from './diversification-page.component';
 
 describe('DiversificationComponent', () => {
-  let component: DiversificationComponent;
-  let fixture: ComponentFixture<DiversificationComponent>;
+  let component: DiversificationPageComponent;
+  let fixture: ComponentFixture<DiversificationPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DiversificationComponent ]
+      declarations: [ DiversificationPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DiversificationComponent);
+    fixture = TestBed.createComponent(DiversificationPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -27,10 +27,12 @@ import { InfluenceHumanBehaviorComponent } from './what-we-do-page/heart-of-stra
 import { ReflectionBehavioralFlawsComponent } from './what-we-do-page/heart-of-strategy-page/reflection-behavioral-flaws/reflection-behavioral-flaws.component';
 import { TrendsUniversalTimelessPhenomenonComponent } from './what-we-do-page/heart-of-strategy-page/trends-universal-timeless-phenomenon/trends-universal-timeless-phenomenon.component';
 import { SquareGraphComponent } from './what-we-do-page/heart-of-strategy-page/square-graph/square-graph.component';
-import { DiversificationComponent } from './what-we-do-page/diversification/diversification.component';
-import { DiversificationMaximizesPerformanceComponent } from './what-we-do-page/diversification/diversification-maximizes-performance/diversification-maximizes-performance.component';
-import { ImplementDiversificationComponent } from './what-we-do-page/diversification/implement-diversification/implement-diversification.component';
-import { DiversificationReducesRiskComponent } from './what-we-do-page/diversification/diversification-reduces-risk/diversification-reduces-risk.component';
+import { DiversificationPageComponent } from './what-we-do-page/diversification-page/diversification-page.component';
+import { DiversificationMaximizesPerformanceComponent } from './what-we-do-page/diversification-page/diversification-maximizes-performance/diversification-maximizes-performance.component';
+import { ImplementDiversificationComponent } from './what-we-do-page/diversification-page/implement-diversification/implement-diversification.component';
+import { DiversificationReducesRiskComponent } from './what-we-do-page/diversification-page/diversification-reduces-risk/diversification-reduces-risk.component';
+import { InstrumentOfStrategyPageComponent } from './what-we-do-page/instrument-of-strategy-page/instrument-of-strategy-page.component';
+import { MoneyRiskManagementPageComponent } from './what-we-do-page/money-risk-management-page/money-risk-management-page.component';
 
 @NgModule({
   declarations: [
@@ -57,10 +59,12 @@ import { DiversificationReducesRiskComponent } from './what-we-do-page/diversifi
     ReflectionBehavioralFlawsComponent,
     TrendsUniversalTimelessPhenomenonComponent,
     SquareGraphComponent,
-    DiversificationComponent,
+    DiversificationPageComponent,
     DiversificationMaximizesPerformanceComponent,
     ImplementDiversificationComponent,
-    DiversificationReducesRiskComponent
+    DiversificationReducesRiskComponent,
+    InstrumentOfStrategyPageComponent,
+    MoneyRiskManagementPageComponent
   ],
   imports: [
     CommonModule,

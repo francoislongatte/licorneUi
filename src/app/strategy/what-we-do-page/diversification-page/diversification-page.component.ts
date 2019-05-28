@@ -3,11 +3,11 @@ import {ContentConfigsContent, StrategyContent} from '../../share/services/query
 import {QueryGQL} from '../../share/services/query.service';
 
 @Component({
-  selector: 'li-diversification',
-  templateUrl: './diversification.component.html',
-  styleUrls: ['./diversification.component.scss']
+  selector: 'li-diversification-page',
+  templateUrl: './diversification-page.component.html',
+  styleUrls: ['./diversification-page.component.scss']
 })
-export class DiversificationComponent implements OnInit {
+export class DiversificationPageComponent implements OnInit {
 
   contents: {
     header?: StrategyContent[];
