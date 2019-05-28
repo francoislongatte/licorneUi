@@ -4,7 +4,7 @@ import { ProgressCirclesComponent } from './progress-circles/progress-circles.co
 import { CollapseComponent } from './collapse/collapse.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
-import { LineChartComponent } from './line-chart/line-chart.component';
+import { ChartComponent } from './chart/chart.component';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @NgModule({
@@ -13,7 +13,7 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     CollapseComponent,
     CarouselComponent,
     LoadingScreenComponent,
-    LineChartComponent
+    ChartComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +24,7 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     CollapseComponent,
     CarouselComponent,
     LoadingScreenComponent,
-    LineChartComponent
+    ChartComponent
   ]
 })
 export class ShareModule { }

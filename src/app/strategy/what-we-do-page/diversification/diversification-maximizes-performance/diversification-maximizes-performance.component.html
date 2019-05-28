@@ -1,0 +1,17 @@
+<div id="art1" class="column is-4 is-offset-2">
+  <div class="columns">
+    <div class="column is-2">
+      <div class="square"></div>
+    </div>
+    <div class="column is-10">
+      <h1 class="title is-1 is-spaced is-family-secondary">{{article.contents[0].Title_en}}</h1>
+      <div [innerHTML]="article.contents[0].Text_en | markdown"></div>
+      <a [routerLink]="['.', 'heart-of-strategy']" class="button is-outlined is-rounded is-primary" id="btnAccount">
+        LEARN MORE
+      </a>
+    </div>
+  </div>
+</div>
+<div id="art1-img" class="column image is-5 is-offset-1 ">
+  <img class="image" [src]="article.contents[0].image.url" />
+</div>

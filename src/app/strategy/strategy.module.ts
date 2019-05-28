@@ -26,6 +26,11 @@ import { MarketsEfficientComponent } from './what-we-do-page/heart-of-strategy-p
 import { InfluenceHumanBehaviorComponent } from './what-we-do-page/heart-of-strategy-page/influence-human-behavior/influence-human-behavior.component';
 import { ReflectionBehavioralFlawsComponent } from './what-we-do-page/heart-of-strategy-page/reflection-behavioral-flaws/reflection-behavioral-flaws.component';
 import { TrendsUniversalTimelessPhenomenonComponent } from './what-we-do-page/heart-of-strategy-page/trends-universal-timeless-phenomenon/trends-universal-timeless-phenomenon.component';
+import { SquareGraphComponent } from './what-we-do-page/heart-of-strategy-page/square-graph/square-graph.component';
+import { DiversificationComponent } from './what-we-do-page/diversification/diversification.component';
+import { DiversificationMaximizesPerformanceComponent } from './what-we-do-page/diversification/diversification-maximizes-performance/diversification-maximizes-performance.component';
+import { ImplementDiversificationComponent } from './what-we-do-page/diversification/implement-diversification/implement-diversification.component';
+import { DiversificationReducesRiskComponent } from './what-we-do-page/diversification/diversification-reduces-risk/diversification-reduces-risk.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +55,12 @@ import { TrendsUniversalTimelessPhenomenonComponent } from './what-we-do-page/he
     MarketsEfficientComponent,
     InfluenceHumanBehaviorComponent,
     ReflectionBehavioralFlawsComponent,
-    TrendsUniversalTimelessPhenomenonComponent
+    TrendsUniversalTimelessPhenomenonComponent,
+    SquareGraphComponent,
+    DiversificationComponent,
+    DiversificationMaximizesPerformanceComponent,
+    ImplementDiversificationComponent,
+    DiversificationReducesRiskComponent
   ],
   imports: [
     CommonModule,

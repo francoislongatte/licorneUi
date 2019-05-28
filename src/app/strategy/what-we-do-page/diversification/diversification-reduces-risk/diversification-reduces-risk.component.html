@@ -1,7 +1,10 @@
-<div id="reflectionBehavioralFlaws-img" class="column image is-5">
+<div id="art2-img" class="column image is-5">
   <img class="image" [src]="article.contents[0].image.url" />
 </div>
-<div id="reflectionBehavioralFlaws" class="column is-4 is-offset-1">
+<div id="art2" class="column is-4 is-offset-1">
   <h1 class="title is-1 is-spaced is-family-secondary">{{article.contents[0].Title_en}}</h1>
   <div [innerHTML]="article.contents[0].Text_en | markdown"></div>
+  <a [routerLink]="['.', 'diversification']" class="button is-outlined is-rounded is-primary" id="btnAccount">
+    LEARN MORE
+  </a>
 </div>

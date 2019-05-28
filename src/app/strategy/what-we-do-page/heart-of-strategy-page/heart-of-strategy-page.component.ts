@@ -13,6 +13,7 @@ export class HeartOfStrategyPageComponent implements OnInit {
     header?: ContentConfigsContent;
     title?: ContentConfigsContent;
     articles?: ContentConfigsContent[];
+    graph?: ContentConfigsContent[];
   } = {};
 
   constructor(private queryGraphql: QueryGQL) { }
@@ -26,9 +27,11 @@ export class HeartOfStrategyPageComponent implements OnInit {
           .find(result => result.id_text === 'heartOfStrategy');
         this.contents.articles = results
           .filter(result => result.position === 'strategyHeartOfStrategy-article');
+        this.contents.graph = results
+          .filter(result => result.position === 'strategyHeartOfStrategy-graph');
         this.contents.header = header ? header : null;
         this.contents.title = title ? title : null;
-        console.log(this.contents.articles);
+        console.log(this.contents.graph);
       });
   }
 

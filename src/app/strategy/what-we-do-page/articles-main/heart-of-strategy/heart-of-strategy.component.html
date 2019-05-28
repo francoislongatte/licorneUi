@@ -16,7 +16,7 @@
     </div>
     <div class="column image is-5 is-offset-1">
       <div class="box" [style.border-color]="article.contents[0]?.Schema_en.colorBox">
-        <li-line-chart [options]="article.contents[0]?.Schema_en"></li-line-chart>
+        <li-chart [options]="article.contents[0]?.Schema_en"></li-chart>
         <div class="background" [style.background-color]="article.contents[0]?.Schema_en?.color"></div>
       </div>
       <div class="square"></div>

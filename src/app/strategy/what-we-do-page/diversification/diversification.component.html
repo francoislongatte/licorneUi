@@ -1,0 +1,15 @@
+<li-header-page [strategyHeaderContent]="contents?.header"></li-header-page>
+<li-title-page [strategyWhatTheyDoContent]="contents?.title"></li-title-page>
+
+
+<div id="articles" *ngIf="contents?.articles" class="container is-fluid is-marginless">
+  <div class="columns is-multiline" li-diversification-maximizes-performance
+       *ngIf="getArticle('diversification-maximizes-performance')"
+       [article]="getArticle('diversification-maximizes-performance')"></div>
+  <div class="columns is-multiline" li-diversification-reduces-risk
+       *ngIf="getArticle('diversification-reduces-risk')"
+       [article]="getArticle('diversification-reduces-risk')"></div>
+  <div class="columns is-multiline" li-implement-diversification
+       *ngIf="getArticle('implement-diversification')"
+       [article]="getArticle('implement-diversification')"></div>
+</div>

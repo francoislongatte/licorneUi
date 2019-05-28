@@ -19,7 +19,7 @@
               </ng-container>
               <ng-container *ngIf="article?.Schema_en?.chart">
                 <div class="box" [style.border-color]="article?.Schema_en?.colorBox">
-                  <li-line-chart [options]="article?.Schema_en"></li-line-chart>
+                  <li-chart [options]="article?.Schema_en"></li-chart>
                   <div class="background" [style.background-color]="article?.Schema_en?.color"></div>
                 </div>
               </ng-container>
@@ -42,7 +42,7 @@
               </ng-container>
               <ng-container *ngIf="article?.Schema_en?.chart">
                 <div class="box" [style.border-color]="article.Schema_en.colorBox">
-                  <li-line-chart [options]="article?.Schema_en"></li-line-chart>
+                  <li-chart [options]="article?.Schema_en"></li-chart>
                   <div class="background" [style.background-color]="article?.Schema_en?.color"></div>
                 </div>
               </ng-container>

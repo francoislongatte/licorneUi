@@ -6,6 +6,7 @@ import {WhatTheyDoPageComponent} from './what-they-do-page/what-they-do-page.com
 import {WhatWeDoPageComponent} from './what-we-do-page/what-we-do-page.component';
 import {ArticlesMainComponent} from './what-we-do-page/articles-main/articles-main.component';
 import {HeartOfStrategyPageComponent} from './what-we-do-page/heart-of-strategy-page/heart-of-strategy-page.component';
+import {DiversificationComponent} from './what-we-do-page/diversification/diversification.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
           }, {
             path: 'heart-of-strategy',
             component: HeartOfStrategyPageComponent
+          },
+          {
+            path: 'diversification',
+            component: DiversificationComponent
           }
         ]
       },

@@ -72,3 +72,23 @@ export const GET_WHAT_WE_DO_HEART_OF_STRATEGY_PAGE = gql`{
     }
   }
 }`;
+
+export const GET_DIVERSIFICATION_STRATEGY_PAGE = gql`{
+  contentconfigs(where : { page : "strategyDiversification" }) {
+    position
+    id_text
+    contents{
+      Text_en
+      Text_fr
+      Title_en
+      Title_fr
+      Schema_en
+      Subtitle_en
+      order
+      onglet
+      image {
+        url
+      }
+    }
+  }
+}`;

@@ -2,7 +2,7 @@
 <li-title-page [strategyWhatTheyDoContent]="contents?.title?.contents"></li-title-page>
 
 
-<div id="articles" *ngIf="contents?.articles" class="container is-fluid is-marginless">
+<div *ngIf="contents?.articles" class="container is-fluid is-marginless">
   <div class="columns is-multiline" li-markets-efficient
        *ngIf="getArticle('markets-efficient')"
        [article]="getArticle('markets-efficient')"></div>
@@ -15,4 +15,8 @@
   <div class="columns is-multiline" li-trends-universal-timeless-phenomenon
        *ngIf="getArticle('trends-universal-timeless-phenomenon')"
        [article]="getArticle('trends-universal-timeless-phenomenon')"></div>
+</div>
+
+<div class="container graphContainer is-fluid" *ngIf="contents?.graph">
+  <div class="columns is-multiline" li-square-graph [article]="contents?.graph"></div>
 </div>
