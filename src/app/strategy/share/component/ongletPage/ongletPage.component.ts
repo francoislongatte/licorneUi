@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {StrategyContent} from '../../services/query.interface';
+import {Data} from '../../../../share/services/daotranslate.service';
 
 @Component({
   selector: 'li-onglet-page',
@@ -9,10 +10,10 @@ import {StrategyContent} from '../../services/query.interface';
 export class OngletPageComponent {
 
   private ongletActive = 0;
-  private _strategyWhatTheyDoContent: StrategyContent[];
+  private _strategyWhatTheyDoContent: Data[];
 
   @Input()
-  set strategyWhatTheyDoContent(value: StrategyContent[]) {
+  set strategyWhatTheyDoContent(value: Data[]) {
     if (value) {
       this._strategyWhatTheyDoContent = value;
       this._strategyWhatTheyDoContent.sort((itemA, itemB) => itemA.order - itemB.order);
@@ -22,7 +23,7 @@ export class OngletPageComponent {
   constructor() {
   }
 
-  get articles(): StrategyContent[] {
+  get articles(): Data[] {
     if (this._strategyWhatTheyDoContent && this._strategyWhatTheyDoContent.length > 0) {
       return this._strategyWhatTheyDoContent.filter(content => content.onglet === this.ongletActive + 1 && content.order !== 0);
     }
@@ -32,7 +33,7 @@ export class OngletPageComponent {
     this.ongletActive = value;
   }
 
-  get titleOnglets(): StrategyContent[] {
+  get titleOnglets(): Data[] {
     if (this._strategyWhatTheyDoContent && this._strategyWhatTheyDoContent.length > 0) {
       return this._strategyWhatTheyDoContent.filter(content => content.order === 0);
     }

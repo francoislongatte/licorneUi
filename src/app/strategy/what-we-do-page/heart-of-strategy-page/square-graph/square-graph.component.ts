@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {ContentConfigsContent} from '../../../share/services/query.interface';
+import {Data} from '../../../../share/services/daotranslate.service';
 
 @Component({
   selector: '[li-square-graph]',
@@ -9,13 +10,11 @@ import {ContentConfigsContent} from '../../../share/services/query.interface';
 })
 export class SquareGraphComponent implements OnInit {
 
-  @Input() article: ContentConfigsContent;
+  @Input() article: Data[];
 
   constructor() {
   }
 
-  ngOnInit() {
-    console.log(this.article);
-  }
+  ngOnInit() {}
 
 }

@@ -1,20 +1,20 @@
-<li-header-page [strategyHeaderContent]="contents?.header?.contents"></li-header-page>
-<li-title-page [strategyWhatTheyDoContent]="contents?.title?.contents"></li-title-page>
+<li-header-page [strategyHeaderContent]="contents?.header"></li-header-page>
+<li-title-page [strategyWhatTheyDoContent]="contents?.title"></li-title-page>
 
 
-<div *ngIf="contents?.articles" class="container is-fluid is-marginless">
+<div *ngIf="isArticles" class="container is-fluid is-marginless">
   <div class="columns is-multiline" li-markets-efficient
-       *ngIf="getArticle('markets-efficient')"
-       [article]="getArticle('markets-efficient')"></div>
+       *ngIf="contents?.article1"
+       [article]="contents?.article1"></div>
   <div class="columns is-multiline" li-influence-human-behavior
-       *ngIf="getArticle('influence-human-behavior')"
-       [article]="getArticle('influence-human-behavior')"></div>
+       *ngIf="contents?.article2"
+       [article]="contents?.article2"></div>
   <div class="columns is-multiline" li-reflection-behavioral-flaws
-       *ngIf="getArticle('reflection-behavioral-flaws')"
-       [article]="getArticle('reflection-behavioral-flaws')"></div>
+       *ngIf="contents?.article3"
+       [article]="contents?.article3"></div>
   <div class="columns is-multiline" li-trends-universal-timeless-phenomenon
-       *ngIf="getArticle('trends-universal-timeless-phenomenon')"
-       [article]="getArticle('trends-universal-timeless-phenomenon')"></div>
+       *ngIf="contents?.article4"
+       [article]="contents?.article4"></div>
 </div>
 
 <div class="container graphContainer is-fluid" *ngIf="contents?.graph">

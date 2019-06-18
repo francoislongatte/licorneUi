@@ -18,6 +18,7 @@ import {APOLLO_OPTIONS, ApolloModule} from 'apollo-angular';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 import {MarkdownModule} from 'ngx-markdown';
 import {environment} from '../environments/environment';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {environment} from '../environments/environment';
     HttpClientModule,
     ApolloModule,
     HttpLinkModule,
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    TranslateModule.forRoot()
   ],
   providers: [
     {

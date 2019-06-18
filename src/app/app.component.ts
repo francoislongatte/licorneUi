@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {animate, query, style, transition, trigger} from '@angular/animations';
+import {TranslateService} from '@ngx-translate/core';
+import {ActivatedRoute, Router, RoutesRecognized} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -36,4 +38,29 @@ import {animate, query, style, transition, trigger} from '@angular/animations';
 })
 export class AppComponent {
   title = 'licorne Website';
+  constructor(
+    private translate: TranslateService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {
+    this.translate.setDefaultLang('en');
+    this.router.events.subscribe(val => {
+      if (val instanceof RoutesRecognized) {
+        if (val && val.state && val.state.root && val.state.root.firstChild) {
+          console.log('1', val.state.root.firstChild.url[0].path, this.translate.currentLang);
+          if ( this.translate.currentLang !== val.state.root.firstChild.url[0].path ) {
+            this.translate.use(val.state.root.firstChild.url[0].path);
+          };
+        } else if (this.translate.getBrowserLang() === 'en' || this.translate.getBrowserLang() === 'fr' ) {
+          console.log('2', this.translate.getBrowserLang());
+          this.translate.use('fr');
+          this.router.navigate(['./fr']);
+        } else {
+          console.log('3', 'fr');
+          this.translate.use('fr');
+          this.router.navigate(['fr']);
+        }
+      }
+    });
+  }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ContentConfigsContent, StrategyContent} from '../../share/services/query.interface';
 import {QueryGQL} from '../../share/services/query.service';
+import {Data} from '../../../share/services/daotranslate.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'li-diversification-page',
@@ -10,30 +12,45 @@ import {QueryGQL} from '../../share/services/query.service';
 export class DiversificationPageComponent implements OnInit {
 
   contents: {
-    header?: StrategyContent[];
-    title?: StrategyContent[];
-    articles?: ContentConfigsContent[];
+    header?: Data;
+    title?: Data;
+    article1?: Data;
+    article2?: Data;
+    article3?: Data;
   } = {};
 
-  constructor(private queryGraphql: QueryGQL) { }
+  constructor( private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.queryGraphql.$DiversificationPage
-      .subscribe((results: ContentConfigsContent[]) => {
-        const header = results
-          .find(result => result.id_text === 'header');
-        const title = results
-          .find(result => result.id_text === 'diversification');
-        this.contents.articles = results
-          .filter(result => result.position === 'strategyDiversification-article');
-        this.contents.header = header ? header.contents : null;
-        this.contents.title = title ? title.contents : null;
-        console.log(this.contents.articles);
+    this.route.data.subscribe((results: { data: Data[] }) => {
+      results.data.forEach((value: StrategyContent) => {
+        if (value.id_position === 'header') {
+          this.contents.header = value;
+        }
+        if (value.id_position === 'diversification') {
+          this.contents.title = value;
+        }
+        if (value.id_position === 'diversification-maximizes-performance') {
+          this.contents.article1 = value;
+        }
+        if (value.id_position === 'diversification-reduces-risk') {
+          this.contents.article2 = value;
+        }
+        if (value.id_position === 'implement-diversification') {
+          this.contents.article3 = value;
+        }
       });
+    });
+
   }
 
-  getArticle(name: string) {
-    return this.contents.articles.find(article => article.id_text === name);
+
+  isArticles(): boolean {
+    return !!(
+      this.contents.article1 ||
+      this.contents.article2 ||
+      this.contents.article3
+    );
   }
 
 }

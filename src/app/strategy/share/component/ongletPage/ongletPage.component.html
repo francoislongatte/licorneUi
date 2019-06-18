@@ -2,7 +2,7 @@
   <div class="columns is-gapless">
     <div class="column title" *ngFor="let title of titleOnglets;let index = index">
       <a class="has-text-centered" (click)="changeOnglet(index)" [ngClass]="{'is-active': index == ongletActive}">
-        {{title.Title_en}}
+        {{title.Title}}
       </a>
     </div>
   </div>

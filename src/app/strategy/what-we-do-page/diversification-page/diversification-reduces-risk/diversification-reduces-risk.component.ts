@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {ContentConfigsContent} from '../../../share/services/query.interface';
+import {Data} from '../../../../share/services/daotranslate.service';
 
 @Component({
   selector: '[li-diversification-reduces-risk]',
@@ -7,7 +8,7 @@ import {ContentConfigsContent} from '../../../share/services/query.interface';
 })
 export class DiversificationReducesRiskComponent {
 
-  @Input() article: ContentConfigsContent;
+  @Input() article: Data;
 
   constructor() { }
 

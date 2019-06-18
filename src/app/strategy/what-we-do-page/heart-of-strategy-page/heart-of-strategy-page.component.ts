@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {ContentConfigsContent, StrategyContent} from '../../share/services/query.interface';
-import {QueryGQL} from '../../share/services/query.service';
+import {Component, OnInit} from '@angular/core';
+import {StrategyContent} from '../../share/services/query.interface';
+import {Data} from '../../../share/services/daotranslate.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'li-heart-of-strategy-page',
@@ -10,33 +11,55 @@ import {QueryGQL} from '../../share/services/query.service';
 export class HeartOfStrategyPageComponent implements OnInit {
 
   contents: {
-    header?: ContentConfigsContent;
-    title?: ContentConfigsContent;
-    articles?: ContentConfigsContent[];
-    graph?: ContentConfigsContent[];
+    header?: StrategyContent;
+    title?: StrategyContent;
+    article1?: StrategyContent;
+    article2?: StrategyContent;
+    article3?: StrategyContent;
+    article4?: StrategyContent;
+    graph?: StrategyContent[];
   } = {};
 
-  constructor(private queryGraphql: QueryGQL) { }
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
-    this.queryGraphql.$heartOfStrategyPage
-      .subscribe((results: ContentConfigsContent[]) => {
-        const header = results
-          .find(result => result.id_text === 'header');
-        const title = results
-          .find(result => result.id_text === 'heartOfStrategy');
-        this.contents.articles = results
-          .filter(result => result.position === 'strategyHeartOfStrategy-article');
-        this.contents.graph = results
-          .filter(result => result.position === 'strategyHeartOfStrategy-graph');
-        this.contents.header = header ? header : null;
-        this.contents.title = title ? title : null;
-        console.log(this.contents.graph);
+    console.log(this.route);
+    this.route.data.subscribe((results: { data: Data[] }) => {
+      results.data.forEach((value: StrategyContent) => {
+        console.log('data', value);
+        if (value.id_position === 'header') {
+          this.contents.header = value;
+        }
+        if (value.id_position === 'heartOfStrategy') {
+          this.contents.title = value;
+        }
+        if (value.id_position === 'markets-efficient') {
+          this.contents.article1 = value;
+        }
+        if (value.id_position === 'influence-human-behavior') {
+          this.contents.article2 = value;
+        }
+        if (value.id_position === 'reflection-behavioral-flaws') {
+          this.contents.article3 = value;
+        }
+        if (value.id_position === 'trends-universal-timeless-phenomenon') {
+          this.contents.article4 = value;
+        }
+        if (value.id_position.startsWith('graph')) {
+          this.contents.graph.push(value);
+        }
       });
+      console.log('CONTENT', this.contents);
+    });
   }
 
-  getArticle(name: string) {
-    return this.contents.articles.find(article => article.id_text === name);
+  isArticles(): boolean {
+    return !!(
+      this.contents.article1 ||
+      this.contents.article2 ||
+      this.contents.article3 ||
+      this.contents.article4
+    );
   }
-
 }

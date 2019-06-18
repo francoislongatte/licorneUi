@@ -6,8 +6,8 @@
           <div class="square"></div>
         </div>
         <div class="column is-10">
-          <h1 class="title is-1 is-spaced is-family-secondary">{{article.contents[0].Title_en}}</h1>
-          <div [innerHTML]="article.contents[0].Text_en | markdown"></div>
+          <h1 class="title is-1 is-spaced is-family-secondary">{{article?.Title}}</h1>
+          <div [innerHTML]="article?.Text | markdown"></div>
           <a [routerLink]="['.', 'heart-of-strategy']" class="button is-outlined is-rounded is-primary" id="btnAccount">
             LEARN MORE
           </a>
@@ -15,9 +15,9 @@
       </div>
     </div>
     <div class="column image is-5 is-offset-1">
-      <div class="box" [style.border-color]="article.contents[0]?.Schema_en.colorBox">
-        <li-chart [options]="article.contents[0]?.Schema_en"></li-chart>
-        <div class="background" [style.background-color]="article.contents[0]?.Schema_en?.color"></div>
+      <div class="box" [style.border-color]="article?.Schema?.colorBox">
+        <li-chart [options]="article?.Schema"></li-chart>
+        <div class="background" [style.background-color]="article?.Schema?.color"></div>
       </div>
       <div class="square"></div>
     </div>

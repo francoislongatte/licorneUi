@@ -1,6 +1,10 @@
 
 export interface StrategyResponse {
-  contentconfigs: ContentConfigsContent[];
+  data: ContentConfigsContent;
+}
+
+export interface StrategiesContent {
+  strategies: StrategyContent[];
 }
 
 export interface ContentConfigsContent {
@@ -38,8 +42,12 @@ export interface StrategyContent {
   Subtitle_fr: string;
   Text_en: string;
   Text_fr: string;
+  Schema_en: Schema;
+  Schema_fr: Schema;
+  List_fr: JSON;
+  List_en: JSON;
+  image: { url: string; };
+  id_position: string;
   order: number;
   onglet: number;
-  Schema_en: Schema;
-  image: { url: string; };
 }

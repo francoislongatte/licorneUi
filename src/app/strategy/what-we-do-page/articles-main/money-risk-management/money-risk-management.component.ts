@@ -1,5 +1,5 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {ContentConfigsContent} from '../../../share/services/query.interface';
+import {Data} from '../../../../share/services/daotranslate.service';
 
 @Component({
   selector: '[li-money-risk-management]',
@@ -7,9 +7,10 @@ import {ContentConfigsContent} from '../../../share/services/query.interface';
   styleUrls: ['./money-risk-management.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class MoneyRiskManagementComponent{
+export class MoneyRiskManagementComponent {
 
-  @Input() article: ContentConfigsContent;
+  @Input() article: Data
+  ;
 
   constructor() { }
 

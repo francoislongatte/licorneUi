@@ -1,8 +1,8 @@
 <div class="columns is-multiline">
     <div class="column is-8 is-offset-2 center has-text-centered" *ngIf="articleCenter?.length > 0">
       <ng-container *ngFor="let articleCenter of articleCenter;let index = index;">
-        <h2 class="title is-4">{{articleCenter.Title_en}}</h2>
-        <div class="is-size-4" markdown>{{articleCenter.Text_en}}</div>
+        <h2 class="title is-4">{{articleCenter.Title}}</h2>
+        <div class="is-size-4" markdown>{{articleCenter.Text}}</div>
       </ng-container>
     </div>
     <div class="column is-6">
@@ -10,17 +10,17 @@
         <ng-container *ngFor="let article of articles;let index = index;">
           <ng-container *ngIf="index + 1 <= articlesLengthForTwoColumn">
             <div  class="column is-12 article left">
-              <ng-container *ngIf="!article?.image && !article?.Schema_en?.chart">
-                <h2 class="title is-4">{{article.Title_en}}</h2>
-                <div class="is-size-4" markdown>{{article.Text_en}}</div>
+              <ng-container *ngIf="!article?.image && !article?.Schema?.chart">
+                <h2 class="title is-4">{{article.Title}}</h2>
+                <div class="is-size-4" markdown>{{article.Text}}</div>
               </ng-container>
               <ng-container *ngIf="article?.image">
                 <img class="image " [src]="article.image.url" />
               </ng-container>
-              <ng-container *ngIf="article?.Schema_en?.chart">
-                <div class="box" [style.border-color]="article?.Schema_en?.colorBox">
-                  <li-chart [options]="article?.Schema_en"></li-chart>
-                  <div class="background" [style.background-color]="article?.Schema_en?.color"></div>
+              <ng-container *ngIf="article?.Schema?.chart">
+                <div class="box" [style.border-color]="article?.Schema?.colorBox">
+                  <li-chart [options]="article?.Schema"></li-chart>
+                  <div class="background" [style.background-color]="article?.Schema?.color"></div>
                 </div>
               </ng-container>
             </div>
@@ -33,17 +33,17 @@
         <ng-container *ngFor="let article of articles;let index = index;">
           <ng-container *ngIf="index + 1 > articlesLengthForTwoColumn">
             <div class="column is-12 article right">
-              <ng-container *ngIf="!article?.image && !article?.Schema_en?.chart">
-                <h2 class="title is-4">{{article.Title_en}}</h2>
-                <div class="is-size-4" markdown>{{article.Text_en}}</div>
+              <ng-container *ngIf="!article?.image && !article?.Schema?.chart">
+                <h2 class="title is-4">{{article.Title}}</h2>
+                <div class="is-size-4" markdown>{{article.Text}}</div>
               </ng-container>
               <ng-container *ngIf="article?.image">
                 <img class="image" [src]="article.image.url" />
               </ng-container>
-              <ng-container *ngIf="article?.Schema_en?.chart">
-                <div class="box" [style.border-color]="article.Schema_en.colorBox">
-                  <li-chart [options]="article?.Schema_en"></li-chart>
-                  <div class="background" [style.background-color]="article?.Schema_en?.color"></div>
+              <ng-container *ngIf="article?.Schema?.chart">
+                <div class="box" [style.border-color]="article.Schema.colorBox">
+                  <li-chart [options]="article?.Schema"></li-chart>
+                  <div class="background" [style.background-color]="article?.Schema?.color"></div>
                 </div>
               </ng-container>
             </div>

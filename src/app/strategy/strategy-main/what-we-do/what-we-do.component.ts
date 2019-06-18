@@ -1,5 +1,6 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
 import {StrategyContent} from '../../share/services/query.interface';
+import {Data} from '../../../share/services/daotranslate.service';
 
 @Component({
   selector: 'li-what-we-do',
@@ -52,10 +53,11 @@ export class WhatWeDoComponent {
     yAxisLabel: 'test2'
   };
 
-  private _strategyWhatTheyDoContent: StrategyContent[];
+  private _strategyWhatTheyDoContent: Data;
 
   @Input()
-  set strategyWhatTheyDoContent(value: StrategyContent[]) {
+  set strategyWhatTheyDoContent(value: Data) {
+    console.log(value);
     if (value) {
       this._strategyWhatTheyDoContent = value;
     }
@@ -65,14 +67,14 @@ export class WhatWeDoComponent {
   }
 
   get text() {
-    if (this._strategyWhatTheyDoContent && this._strategyWhatTheyDoContent.length > 0) {
-      return this._strategyWhatTheyDoContent[0].Text_en;
+    if (this._strategyWhatTheyDoContent) {
+      return this._strategyWhatTheyDoContent.Text;
     }
   }
 
   get title() {
-    if (this._strategyWhatTheyDoContent && this._strategyWhatTheyDoContent.length > 0) {
-      return this._strategyWhatTheyDoContent[0].Title_en;
+    if (this._strategyWhatTheyDoContent) {
+      return this._strategyWhatTheyDoContent.Title;
     }
   }
 

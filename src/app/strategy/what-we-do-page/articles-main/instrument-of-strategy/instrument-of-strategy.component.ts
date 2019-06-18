@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {ContentConfigsContent} from '../../../share/services/query.interface';
+import {Data} from '../../../../share/services/daotranslate.service';
 
 @Component({
   selector: '[li-instrument-of-strategy]',
@@ -8,7 +8,7 @@ import {ContentConfigsContent} from '../../../share/services/query.interface';
 })
 export class InstrumentOfStrategyComponent {
 
-  @Input() article: ContentConfigsContent;
+  @Input() article: Data;
 
   constructor() { }
 

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {StrategyContent} from '../../../services/query.interface';
+import {Data} from '../../../../../share/services/daotranslate.service';
 
 @Component({
   selector: 'li-template',
@@ -9,32 +10,32 @@ import {StrategyContent} from '../../../services/query.interface';
 export class TemplateComponent {
 
   @Input()
-  set articlesData(value: StrategyContent[]) {
+  set articlesData(value: Data[]) {
     if (value) {
       this.articles = value.filter(article => article.order !== null);
       this.articleCenter = value.filter(article => article.order === null);
     }
   }
 
-  private _articles: StrategyContent[];
-  private _articleCenter: StrategyContent[];
+  private _articles: Data[];
+  private _articleCenter: Data[];
 
   constructor() {
   }
 
-  set articles(value: StrategyContent[]) {
+  set articles(value: Data[]) {
     this._articles = value;
   }
 
-  get articles(): StrategyContent[] {
+  get articles(): Data[] {
     return this._articles;
   }
 
-  get articleCenter(): StrategyContent[] {
+  get articleCenter(): Data[] {
     return this._articleCenter;
   }
 
-  set articleCenter(value: StrategyContent[]) {
+  set articleCenter(value: Data[]) {
     this._articleCenter = value;
   }
 

@@ -3,14 +3,9 @@ import {Apollo} from 'apollo-angular';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {ApolloQueryResult} from 'apollo-client';
-import {
-  GET_DIVERSIFICATION_STRATEGY_PAGE,
-  GET_STRATEGY_PAGE,
-  GET_WHAT_THEY_DO_PAGE,
-  GET_WHAT_WE_DO_HEART_OF_STRATEGY_PAGE,
-  GET_WHAT_WE_DO_PAGE
-} from './query.constante';
-import {ContentConfigsContent, StrategyResponse} from './query.interface';
+import * as query from './query.constante';
+import {StrategiesContent} from './query.interface';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Injectable({
@@ -18,34 +13,39 @@ import {ContentConfigsContent, StrategyResponse} from './query.interface';
 })
 
 export class QueryGQL {
-  constructor(private apollo: Apollo) {
+
+  language: string;
+
+  constructor(
+    private apollo: Apollo,
+    private translate: TranslateService) {
   }
 
   request(queryRequest) {
     return this.apollo
       .watchQuery({query: queryRequest})
       .valueChanges
-      .pipe(map((result: ApolloQueryResult<StrategyResponse>) => result.data.contentconfigs));
+      .pipe(map((result: ApolloQueryResult<StrategiesContent>) => result.data));
   }
 
-  get $strategyPage(): Observable<ContentConfigsContent[]> {
-    return this.request(GET_STRATEGY_PAGE);
+  get $strategyPage(): Observable<StrategiesContent> {
+    return this.request(query['GET_STRATEGY_PAGE_' + this.translate.currentLang.toUpperCase()]);
   }
 
-  get $whatTheyDoPage(): Observable<ContentConfigsContent[]> {
-    return this.request(GET_WHAT_THEY_DO_PAGE);
+  get $whatTheyDoPage(): Observable<StrategiesContent> {
+    return this.request(query['GET_WHAT_THEY_DO_PAGE_' + this.translate.currentLang.toUpperCase()]);
   }
 
-  get $whatWeDoPage(): Observable<ContentConfigsContent[]> {
-    return this.request(GET_WHAT_WE_DO_PAGE);
+  get $whatWeDoPage(): Observable<StrategiesContent> {
+    return this.request(query['GET_WHAT_WE_DO_PAGE_' + this.translate.currentLang.toUpperCase()]);
   }
 
-  get $heartOfStrategyPage(): Observable<ContentConfigsContent[]> {
-    return this.request(GET_WHAT_WE_DO_HEART_OF_STRATEGY_PAGE);
+  get $heartOfStrategyPage(): Observable<StrategiesContent> {
+    return this.request(query['GET_WHAT_WE_DO_HEART_OF_STRATEGY_PAGE_' + this.translate.currentLang.toUpperCase()]);
   }
 
-  get $DiversificationPage(): Observable<ContentConfigsContent[]> {
-    return this.request(GET_DIVERSIFICATION_STRATEGY_PAGE);
+  get $DiversificationPage(): Observable<StrategiesContent> {
+    return this.request(query['GET_DIVERSIFICATION_STRATEGY_PAGE_' + this.translate.currentLang.toUpperCase()]);
   }
 
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {ContentConfigsContent, StrategyContent} from '../../share/services/query.interface';
-import {QueryGQL} from '../../share/services/query.service';
+import {Component, OnInit} from '@angular/core';
+import {StrategyContent} from '../../share/services/query.interface';
+import {Data} from '../../../share/services/daotranslate.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'li-articles-main',
@@ -10,29 +11,62 @@ import {QueryGQL} from '../../share/services/query.service';
 export class ArticlesMainComponent implements OnInit {
 
   contents: {
-    header?: StrategyContent[];
-    title?: StrategyContent[];
-    articles?: ContentConfigsContent[];
+    header?: StrategyContent;
+    title?: StrategyContent;
+    article1?: StrategyContent;
+    article2?: StrategyContent;
+    article3?: StrategyContent;
+    article4?: StrategyContent;
+    article5?: StrategyContent;
+    article6?: StrategyContent;
   } = {};
 
-  constructor(private queryGraphql: QueryGQL) { }
+  constructor(
+    private route: ActivatedRoute
+  ) {
+  }
 
   ngOnInit() {
-    this.queryGraphql.$whatWeDoPage
-      .subscribe((results: ContentConfigsContent[]) => {
-        const header = results
-          .find(result => result.id_text === 'header');
-        const title = results
-          .find(result => result.id_text === 'whatWeDo');
-        this.contents.articles = results
-          .filter(result => result.position === 'strategyWhatTheyDoPage-article');
-        this.contents.header = header ? header.contents : null;
-        this.contents.title = title ? title.contents : null;
+    this.route.data.subscribe((results: { data: Data[] }) => {
+      console.log('resultezefzef', results);
+      results.data.forEach((value: StrategyContent) => {
+        if (value.id_position === 'header') {
+          console.log(value)
+          this.contents.header = value;
+        }
+        if (value.id_position === 'whatWeDo') {
+          this.contents.title = value;
+        }
+        if (value.id_position === 'traditional-portfolio-managers') {
+          this.contents.article1 = value;
+        }
+        if (value.id_position === 'heart-of-strategy') {
+          this.contents.article2 = value;
+        }
+        if (value.id_position === 'investment-universe') {
+          this.contents.article3 = value;
+        }
+        if (value.id_position === 'management-tactics') {
+          this.contents.article4 = value;
+        }
+        if (value.id_position === 'instrument-of-strategy') {
+          this.contents.article5 = value;
+        }
+        if (value.id_position === 'money-risk-management') {
+          this.contents.article6 = value;
+        }
       });
+    });
   }
 
-  getArticle(name: string) {
-    return this.contents.articles.find(article => article.id_text === name);
+  isArticles(): boolean {
+    return !!(
+      this.contents.article1 ||
+      this.contents.article2 ||
+      this.contents.article3 ||
+      this.contents.article4 ||
+      this.contents.article5 ||
+      this.contents.article6
+    );
   }
-
 }

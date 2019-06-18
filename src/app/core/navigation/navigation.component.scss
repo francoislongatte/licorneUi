@@ -9,6 +9,16 @@
   nav .column:last-child .buttons{
     justify-content: flex-end;
   }
+  .select select{
+    border: none;
+    padding-right: calc(0.625em - 1px);
+    &::after{
+      display: none;
+    }
+  }
+  .select:not(.is-multiple):not(.is-loading)::after{
+    display: none;
+  }
 }
 
 .li-dropdown-menu{

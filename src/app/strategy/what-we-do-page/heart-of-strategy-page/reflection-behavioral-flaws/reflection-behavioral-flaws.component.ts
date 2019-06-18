@@ -1,5 +1,5 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {ContentConfigsContent} from '../../../share/services/query.interface';
+import {Data} from '../../../../share/services/daotranslate.service';
 
 @Component({
   selector: '[li-reflection-behavioral-flaws]',
@@ -9,7 +9,7 @@ import {ContentConfigsContent} from '../../../share/services/query.interface';
 })
 export class ReflectionBehavioralFlawsComponent {
 
-  @Input() article: ContentConfigsContent;
+  @Input() article: Data;
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {ContentConfigsContent} from '../../../share/services/query.interface';
+import {Data} from '../../../../share/services/daotranslate.service';
 
 @Component({
   selector: '[li-traditional-portfolio-managers]',
@@ -9,7 +9,7 @@ import {ContentConfigsContent} from '../../../share/services/query.interface';
 })
 export class TraditionalPortfolioManagersComponent {
 
-  @Input() article: ContentConfigsContent;
+  @Input() article: Data;
 
   constructor() { }
 

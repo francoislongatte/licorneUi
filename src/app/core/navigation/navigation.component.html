@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="column has-text-centered">
-          <a [routerLink]="'home'">
+          <a [routerLink]="'/'">
             <img src="../../../assets/images/400dpiLogoCropped.png" alt="Licorne - logo of company">
           </a>
         </div>
@@ -27,9 +27,12 @@
             <a class="button is-outlined is-rounded is-primary" id="btnAccount">
               open account
             </a>
-            <a class="button is-white">
-              <strong>EU</strong>
-            </a>
+            <div class="select" [formGroup]="menuLanguage">
+              <select formControlName="lang">
+                <option [value]="'fr'" >FR</option>
+                <option [value]="'en'">EN</option>
+              </select>
+            </div>
           </div>
         </div>
       </nav>
