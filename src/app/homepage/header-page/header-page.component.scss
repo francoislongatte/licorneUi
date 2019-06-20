@@ -1,21 +1,27 @@
 section{
-  background: #EEEEEE;
+  background: #fff;
 }
 
 .getToKnowUs{
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   padding: 30px;
+  border-radius: 25px;
 }
 
 .titleBanner{
   margin-bottom: 45px;
+  font-family: 'Manuale', serif;
+  line-height: 1.6;
+  font-style: normal;
+  font-weight: 500;
 }
 
 .backgroundImage{
   background: url("../../../assets/images/bankingBackground.jpg") no-repeat right;
 }
-
 
 .spacingTest{
   color: #666666;
@@ -34,3 +40,13 @@ section{
   margin-top: 80px;
 }
 
+.home-header__main-img{
+  max-width: none;
+  width: 750px;
+}
+
+.subtitle{
+  color: #666666;
+  font-size: 16px;
+  line-height: 1.6;
+}

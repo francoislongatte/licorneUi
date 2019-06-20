@@ -1,3 +1,7 @@
+body{
+  line-height: 1.6;
+}
+
 router-outlet ~ * {
   position: absolute;
   height: 100%;
